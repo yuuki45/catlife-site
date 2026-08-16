@@ -1,5 +1,12 @@
 title: 猫の一生アルバム
 description: 猫との何気ない毎日を、一生の思い出に。
 lang: ja
-theme: jekyll-theme-minimal
-show_downloads: false
+url: https://yuuki45.github.io
+baseurl: /catlife-site
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+exclude:
+  - README.md

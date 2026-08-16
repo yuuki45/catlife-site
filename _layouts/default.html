@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }} | 猫の一生アルバム</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="{{ '/assets/icon.png' | relative_url }}" type="image/png">
+<link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="猫の一生アルバム"><img src="{{ '/assets/logo.png' | relative_url }}" alt="猫の一生アルバム"></a>
+    <nav class="nav">
+      <a href="{{ '/privacy' | relative_url }}">プライバシーポリシー</a>
+      <a href="{{ '/terms' | relative_url }}">利用規約</a>
+      <a class="hide-sp" href="{{ '/#contact' | relative_url }}">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+<main class="doc">
+{{ content }}
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>© 2026 Yuuki Odan</div>
+    <nav>
+      <a href="{{ '/' | relative_url }}">トップ</a>
+      <a href="{{ '/privacy' | relative_url }}">プライバシーポリシー</a>
+      <a href="{{ '/terms' | relative_url }}">利用規約</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
