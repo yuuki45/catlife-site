@@ -13,7 +13,7 @@ title: 猫の一生アルバム サポート
 
 不具合のご報告・ご意見・ご要望は、以下までお気軽にご連絡ください。
 
-- メール: [clow.ff14@gmail.com](mailto:clow.ff14@gmail.com)
+- メール: [web-studio@ymail.ne.jp](mailto:web-studio@ymail.ne.jp)
 - アプリ内: 設定 →「ご意見・ご要望をおくる」
 
 ## よくある質問
