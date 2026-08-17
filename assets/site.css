@@ -236,10 +236,10 @@ section.alt { background: var(--card); border-top: 1px solid var(--sep); border-
 
 /* 一生ストリップ（アプリのタイムライン風: 線＋節目） */
 .life-strip { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;
-  max-width: var(--maxw); margin: 8px auto 0; padding: 26px 24px 0; }
-.life-line { position: absolute; left: 24px; right: 24px; top: 0; height: 1px; background: var(--sep); }
-.life-item { margin: 0; position: relative; }
-.life-item::before { content: ""; position: absolute; top: -31px; left: 50%; transform: translateX(-50%);
+  max-width: var(--maxw); margin: 8px auto 0; padding: 0 24px; }
+.life-line { position: absolute; left: 24px; right: 24px; top: 12px; height: 1px; background: var(--sep); }
+.life-item { margin: 0; position: relative; padding-top: 30px; }   /* 上に線と点のぶんの余白（スクロール箱の内側に収める） */
+.life-item::before { content: ""; position: absolute; top: 7px; left: 50%; transform: translateX(-50%);
   width: 10px; height: 10px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--accent); }
 .life-item:first-child::before, .life-item:nth-child(4)::before, .life-item:nth-child(2)::before {
   background: var(--gold); border-color: var(--gold); box-shadow: 0 0 0 4px rgba(192,151,63,.18); }
@@ -248,9 +248,10 @@ section.alt { background: var(--card); border-top: 1px solid var(--sep); border-
 .life-item figcaption { margin-top: 10px; font-size: .82rem; color: var(--sub); line-height: 1.5; text-align: center; }
 .life-item .mark { display: block; font-family: var(--serif); font-weight: 600; color: var(--text); font-size: .95rem; }
 @media (max-width: 860px) {
-  .life-strip { grid-template-columns: repeat(5, 200px); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+  .life-strip { grid-template-columns: repeat(5, 200px); overflow-x: auto; scroll-snap-type: x mandatory;
+    scroll-padding-inline: 24px; padding-bottom: 8px; scrollbar-width: thin; }
   .life-item { scroll-snap-align: start; }
-  .life-line { right: auto; width: calc(5 * 216px); }
+  .life-line { right: auto; width: calc(5 * 216px - 16px); }
 }
 
 /* 画面ギャラリー */
@@ -258,7 +259,7 @@ section.alt { background: var(--card); border-top: 1px solid var(--sep); border-
   max-width: calc(var(--maxw) + 48px); margin: 0 auto; }
 .shot { margin: 0; }
 @media (max-width: 900px) {
-  .screens { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+  .screens { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; scroll-padding-inline: 24px; }
   .shot { flex: 0 0 218px; scroll-snap-align: start; }
 }
 .shot img { width: 100%; border-radius: 20px; border: 5px solid #1c1a17; background: #1c1a17;
@@ -331,9 +332,8 @@ br.pc { display: none; }                    /* PCだけ改行したい位置 */
   .axis .lbl { grid-column: 2; grid-row: 1 / span 2; margin-top: 0; font-size: 0.9rem; color: var(--text); }
 
   /* 一生ストリップ: 横スクロール・端に余白 */
-  .life-strip { grid-template-columns: repeat(5, 172px); gap: 14px; padding: 24px 20px 6px; margin-top: 4px; }
+  .life-strip { grid-template-columns: repeat(5, 172px); gap: 14px; padding: 0 20px 6px; margin-top: 4px; scroll-padding-inline: 20px; }
   .life-line { left: 20px; width: calc(5 * 186px - 14px); }
-  .life-item::before { top: -29px; }
   .life-item figcaption { font-size: 0.78rem; }
   .life-item .mark { font-size: 0.9rem; }
 
@@ -347,7 +347,7 @@ br.pc { display: none; }                    /* PCだけ改行したい位置 */
   .feature .ic { grid-row: 1 / span 2; }
 
   /* 画面ギャラリー */
-  .screens { gap: 16px; padding: 4px 20px 12px; }
+  .screens { gap: 16px; padding: 4px 20px 12px; scroll-padding-inline: 20px; }
   .shot { flex: 0 0 200px; }
   .shot figcaption { font-size: 0.78rem; }
 
@@ -398,4 +398,9 @@ br.pc { display: none; }                    /* PCだけ改行したい位置 */
 @media (max-width: 720px) {
   .mosaic img:nth-child(8) { object-position: 50% 62%; }   /* ねずみのおもちゃ: 横長セルで顔が入るように */
   .contact p { text-wrap: balance; }
+}
+
+/* 横スクロール箱の末尾にも余白（右paddingは無視されるため擬似要素で確保） */
+@media (max-width: 860px) {
+  .life-strip::after, .screens::after { content: ""; flex: 0 0 4px; width: 4px; }
 }
