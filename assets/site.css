@@ -228,9 +228,9 @@ section.alt { background: var(--card); border-top: 1px solid var(--sep); border-
 .screen .hero-photo .cat { background: #6f5a45; opacity: .9; width: 36%; right: 5%; bottom: 4%; aspect-ratio: 239 / 284; }
 
 /* 実機スクショ（角丸ベゼル） */
-.device { margin: 0 auto; width: 290px; padding: 10px; background: #1c1a17; border-radius: 40px;
+.device { margin: 0 auto; width: 290px; padding: 6px; background: #1c1a17; border-radius: 36px;
   box-shadow: 0 30px 60px rgba(60,45,30,.22), 0 2px 6px rgba(0,0,0,.15); }
-.device img { border-radius: 30px; width: 100%; height: auto; }
+.device img { border-radius: 30px; width: 100%; height: auto; display: block; }
 @media (max-width: 860px) { .device { width: 250px; } }
 
 /* 一生ストリップ（アプリのタイムライン風: 線＋節目） */
@@ -260,7 +260,7 @@ section.alt { background: var(--card); border-top: 1px solid var(--sep); border-
   .screens { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }
   .shot { flex: 0 0 218px; scroll-snap-align: start; }
 }
-.shot img { width: 100%; border-radius: 22px; border: 8px solid #1c1a17; background: #1c1a17;
+.shot img { width: 100%; border-radius: 20px; border: 5px solid #1c1a17; background: #1c1a17;
   box-shadow: 0 14px 30px rgba(60,45,30,.16); }
 .shot figcaption { margin-top: 10px; font-size: .82rem; color: var(--sub); line-height: 1.5; text-align: center; }
 
