@@ -77,7 +77,7 @@ title: プライバシーポリシー
 
 本ポリシーやアプリに関するご質問は、以下までご連絡ください。
 
-- メール: web-studio@ymail.ne.jp
+- メール: <span data-mu="web-studio" data-md="ymail.ne.jp">web-studio［at］ymail.ne.jp</span>
 - アプリ内: アプリの設定 →「ご意見・ご要望をおくる」
 
 ---

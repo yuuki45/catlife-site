@@ -36,5 +36,15 @@
     </nav>
   </div>
 </footer>
+<script>
+// メールアドレスはHTMLに直接書かず、表示時に組み立てる（収集ボット対策）
+document.querySelectorAll("[data-mu]").forEach(function (el) {
+  var addr = el.getAttribute("data-mu") + "@" + el.getAttribute("data-md");
+  var a = document.createElement("a");
+  a.href = "mailto:" + addr + (el.getAttribute("data-ms") ? "?subject=" + encodeURIComponent(el.getAttribute("data-ms")) : "");
+  a.textContent = el.getAttribute("data-label") || addr;
+  el.replaceWith(a);
+});
+</script>
 </body>
 </html>

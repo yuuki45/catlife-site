@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=13">
+<link rel="stylesheet" href="assets/site.css?v=14">
 </head>
 <body>
 
@@ -267,7 +267,7 @@
     <div class="eyebrow">Contact</div>
     <h2>お問い合わせ</h2>
     <p class="muted"><span class="nb">不具合のご報告・ご意見・ご要望は、</span><span class="nb">お気軽にどうぞ。</span><br><span class="nb">個人で開発しているので、</span><span class="nb">返信に少しお時間を</span><span class="nb">いただくことがあります。</span></p>
-    <p class="mail"><a href="mailto:web-studio@ymail.ne.jp">web-studio@ymail.ne.jp</a></p>
+    <p class="mail"><span data-mu="web-studio" data-md="ymail.ne.jp" data-ms="猫の一生アルバム お問い合わせ">web-studio［at］ymail.ne.jp</span></p>
     <p class="muted small"><span class="nb">アプリ内からも送れます:</span> <span class="nb">アプリの設定 →「ご意見・ご要望をおくる」</span></p>
   </div>
 </section>
@@ -296,5 +296,15 @@
   </div>
 </footer>
 
+<script>
+// メールアドレスはHTMLに直接書かず、表示時に組み立てる（収集ボット対策）
+document.querySelectorAll("[data-mu]").forEach(function (el) {
+  var addr = el.getAttribute("data-mu") + "@" + el.getAttribute("data-md");
+  var a = document.createElement("a");
+  a.href = "mailto:" + addr + (el.getAttribute("data-ms") ? "?subject=" + encodeURIComponent(el.getAttribute("data-ms")) : "");
+  a.textContent = el.getAttribute("data-label") || addr;
+  el.replaceWith(a);
+});
+</script>
 </body>
 </html>
