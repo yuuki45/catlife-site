@@ -243,7 +243,7 @@ section.alt { background: var(--card); border-top: 1px solid var(--sep); border-
   width: 10px; height: 10px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--accent); }
 .life-item:first-child::before, .life-item:nth-child(4)::before, .life-item:nth-child(2)::before {
   background: var(--gold); border-color: var(--gold); box-shadow: 0 0 0 4px rgba(192,151,63,.18); }
-.life-item img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 14px;
+.life-item img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 14px; display: block;
   box-shadow: 0 8px 20px rgba(60,45,30,.10); }
 .life-item figcaption { margin-top: 10px; font-size: .82rem; color: var(--sub); line-height: 1.5; text-align: center; }
 .life-item .mark { display: block; font-family: var(--serif); font-weight: 600; color: var(--text); font-size: .95rem; }
@@ -257,12 +257,13 @@ section.alt { background: var(--card); border-top: 1px solid var(--sep); border-
 /* 画面ギャラリー */
 .screens { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; padding: 8px 24px 16px;
   max-width: calc(var(--maxw) + 48px); margin: 0 auto; }
-.shot { margin: 0; }
+.shot { margin: 0; min-width: 0; }
 @media (max-width: 900px) {
   .screens { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; scroll-padding-inline: 24px; }
   .shot { flex: 0 0 218px; scroll-snap-align: start; }
 }
-.shot img { width: 100%; border-radius: 20px; border: 5px solid #1c1a17; background: #1c1a17;
+.shot img { width: 100%; height: auto; aspect-ratio: 750 / 1334; object-fit: cover; display: block;
+  border-radius: 20px; border: 5px solid #1c1a17; background: #1c1a17;
   box-shadow: 0 14px 30px rgba(60,45,30,.16); }
 .shot figcaption { margin-top: 10px; font-size: .82rem; color: var(--sub); line-height: 1.5; text-align: center; }
 
