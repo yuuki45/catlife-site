@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=12">
+<link rel="stylesheet" href="assets/site.css?v=13">
 </head>
 <body>
 
@@ -60,50 +60,37 @@
   </div>
 </section>
 
-<!-- 3つの時間軸 -->
-<section class="alt" id="axes">
+<!-- 一生を、時間軸で（写真ストリップ） -->
+<section class="alt" id="life">
   <div class="wrap">
     <span class="tint paw"></span>
-    <div class="eyebrow">Three timelines</div>
-    <h2><span class="nb">同じ写真が、</span><span class="nb">3つの時間軸で</span><span class="nb">違う顔を見せる</span></h2>
-    <p class="section-lead">同じ2021年4月の1枚が、年齢で見れば「1歳のころ」、日数で見れば「366日目」。写真ライブラリから年ごとに選ぶだけで、撮影日から自動で並びます。誕生日がわからない子も、だいたいの時期から年齢を出せます。</p>
-    <div class="axes">
-      <div class="axis"><img class="axis-photo" src="assets/photos/kitten-play.jpg" alt="おもちゃで遊ぶ子猫（2021年4月）" width="900" height="1600" loading="lazy"><div class="axis-body"><div class="num nb">1歳のころ</div><div class="cap">年齢</div><div class="lbl"><span class="nb">子猫だった日々も、</span><span class="nb">いまと地続きに</span></div></div></div>
-      <div class="axis"><img class="axis-photo" src="assets/photos/kitten-play.jpg" alt="おもちゃで遊ぶ子猫（2021年4月）" width="900" height="1600" loading="lazy"><div class="axis-body"><div class="num nb">366日目</div><div class="cap">一緒に暮らした日数</div><div class="lbl"><span class="nb">出会った日を</span><span class="nb">1日目として数える</span></div></div></div>
-      <div class="axis"><img class="axis-photo" src="assets/photos/kitten-play.jpg" alt="おもちゃで遊ぶ子猫（2021年4月）" width="900" height="1600" loading="lazy"><div class="axis-body"><div class="num nb">2021年</div><div class="cap">年</div><div class="lbl"><span class="nb">あの年の、</span><span class="nb">あの季節</span></div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 一生を、時間軸で（写真ストリップ） -->
-<section id="life">
-  <div class="wrap">
     <div class="eyebrow">A life, on a timeline</div>
     <h2><span class="nb">子猫だった日も、</span><span class="nb">今日も、</span><span class="nb">ひとつの線の上に</span></h2>
-    <p class="section-lead">出会った日を1日目として、写真が時間の順に並びます。節目はアプリが自動で立ててくれます。</p>
+    <p class="section-lead">出会った日を1日目として、写真が時間の順に並びます。同じ1枚を「年齢」「一緒に暮らした日数」「年」の3つの時間軸で振り返れて、節目はアプリが自動で立ててくれます。誕生日がわからない子も、だいたいの時期から年齢を出せます。</p>
+    <p class="axes-legend" aria-hidden="true"><span>年齢</span><span>一緒に暮らした日数</span><span>年</span></p>
   </div>
   <p class="scroll-hint wrap" aria-hidden="true">横にスクロール →</p>
   <div class="life-strip" aria-label="こむぎのこれまで">
     <div class="life-line"></div>
     <figure class="life-item">
       <img src="assets/photos/kitten-box.jpg" alt="段ボールからのぞく子猫" width="900" height="1600" loading="lazy">
-      <figcaption><span class="mark">家族になった日</span>2020.04.17</figcaption>
+      <figcaption><span class="mark">家族になった日</span><span class="axes3"><span>0歳ごろ</span><span>1日目</span><span>2020年</span></span></figcaption>
     </figure>
     <figure class="life-item">
       <img src="assets/photos/kitten-eating.jpg" alt="ごはんを食べる子猫" width="900" height="1600" loading="lazy">
-      <figcaption><span class="mark">一緒に暮らして100日</span>2020.07.25</figcaption>
+      <figcaption><span class="mark">一緒に暮らして100日</span><span class="axes3"><span>0歳ごろ</span><span>100日目</span><span>2020年</span></span></figcaption>
     </figure>
     <figure class="life-item">
       <img src="assets/photos/kitten-play.jpg" alt="おもちゃで遊ぶ子猫" width="900" height="1600" loading="lazy">
-      <figcaption><span class="mark">1歳のころ</span>2021.04</figcaption>
+      <figcaption><span class="mark">1歳の誕生日のころ</span><span class="axes3"><span>1歳</span><span>366日目</span><span>2021年</span></span></figcaption>
     </figure>
     <figure class="life-item">
       <img src="assets/photos/window.jpg" alt="窓辺に座る猫" width="900" height="1600" loading="lazy">
-      <figcaption><span class="mark">一緒に暮らして1,000日</span>2023.01.11</figcaption>
+      <figcaption><span class="mark">一緒に暮らして1,000日</span><span class="axes3"><span>2歳</span><span>1,000日目</span><span>2023年</span></span></figcaption>
     </figure>
     <figure class="life-item">
       <img src="assets/photos/sofa-sleep.jpg" alt="ソファで丸くなって眠る猫" width="900" height="1600" loading="lazy">
-      <figcaption><span class="mark">6歳・2,314日目</span>2026.08.17 — 今日</figcaption>
+      <figcaption><span class="mark">今日</span><span class="axes3"><span>6歳</span><span>2,314日目</span><span>2026年</span></span></figcaption>
     </figure>
   </div>
 </section>

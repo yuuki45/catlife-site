@@ -243,7 +243,7 @@ section.alt { background: var(--card); border-top: 1px solid var(--sep); border-
 .life-item { margin: 0; position: relative; padding-top: 30px; }   /* 上に線と点のぶんの余白（スクロール箱の内側に収める） */
 .life-item::before { content: ""; position: absolute; top: 7px; left: 50%; transform: translateX(-50%);
   width: 10px; height: 10px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--accent); }
-.life-item:first-child::before, .life-item:nth-child(4)::before, .life-item:nth-child(2)::before {
+.life-item:not(:last-child)::before {   /* 節目の日は金の点、「今日」だけ白抜き */
   background: var(--gold); border-color: var(--gold); box-shadow: 0 0 0 4px rgba(192,151,63,.18); }
 .life-item img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 14px; display: block;
   box-shadow: 0 8px 20px rgba(60,45,30,.10); }
@@ -408,4 +408,19 @@ br.pc { display: none; }                    /* PCだけ改行したい位置 */
 /* 横スクロール箱の末尾にも余白（右paddingは無視されるため擬似要素で確保） */
 @media (max-width: 860px) {
   .life-strip::after, .screens::after { content: ""; flex: 0 0 4px; width: 4px; }
+}
+
+/* 一生ストリップ: 3つの時間軸のチップ（年齢／日数／年） */
+.axes-legend { display: flex; gap: 6px; margin: -14px 0 8px; font-size: 0.72rem; color: var(--sub); }
+.axes-legend span { border: 1px solid var(--sep); border-radius: 999px; padding: 1px 9px; background: var(--bg); }
+.axes-legend span:nth-child(2) { border-color: rgba(192,151,63,.55); color: var(--gold); }
+.life-item .axes3 { display: flex; justify-content: center; gap: 4px; margin-top: 6px; flex-wrap: nowrap; }
+.life-item .axes3 span { font-size: 0.72rem; line-height: 1.6; padding: 0 7px; border-radius: 999px; border: 1px solid var(--sep);
+  color: var(--text); background: var(--bg); white-space: nowrap; }
+.life-item .axes3 span:nth-child(2) { border-color: rgba(192,151,63,.55); color: var(--gold); font-family: var(--serif); font-weight: 600; }
+.life-item figcaption { text-align: center; }
+@media (max-width: 720px) {
+  .axes-legend { margin: -8px 0 4px; }
+  .life-item .axes3 { gap: 3px; }
+  .life-item .axes3 span { font-size: 0.68rem; padding: 0 6px; }
 }
