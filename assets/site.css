@@ -149,9 +149,11 @@ section.alt { background: var(--card); border-top: 1px solid var(--sep); border-
 /* 3つの時間軸 */
 .axes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .axis {
-  background: var(--card); border: 1px solid var(--sep); border-radius: 18px; padding: 26px 22px 22px;
-  text-align: center;
+  background: var(--card); border: 1px solid var(--sep); border-radius: 18px; padding: 0 0 22px;
+  text-align: center; overflow: hidden;
 }
+.axis-photo { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 40%; display: block; }
+.axis-body { padding: 18px 22px 0; }
 .axis .num { font-family: var(--serif); font-size: 2.1rem; font-weight: 600; line-height: 1.2; }
 .axis .cap { color: var(--sub); font-size: 0.85rem; margin-top: 4px; }
 .axis .lbl { margin-top: 14px; font-size: 0.95rem; }
@@ -326,11 +328,13 @@ br.pc { display: none; }                    /* PCだけ改行したい位置 */
 
   /* 3つの時間軸: 1列で数字を左、説明を右に（近接・整列） */
   .axes { gap: 10px; }
-  .axis { display: grid; grid-template-columns: 8.5em 1fr; column-gap: 14px; align-items: center;
-    text-align: left; padding: 16px 18px; border-radius: 14px; }
-  .axis .num { font-size: 1.45rem; grid-row: 1; }
-  .axis .cap { grid-row: 2; margin-top: 0; font-size: 0.75rem; }
-  .axis .lbl { grid-column: 2; grid-row: 1 / span 2; margin-top: 0; font-size: 0.9rem; color: var(--text); }
+  .axis { display: grid; grid-template-columns: 76px 1fr; column-gap: 14px; align-items: center;
+    text-align: left; padding: 12px 14px 12px 12px; border-radius: 14px; }
+  .axis-photo { aspect-ratio: 1; border-radius: 10px; }
+  .axis-body { padding: 0; }
+  .axis .num { font-size: 1.35rem; display: inline; }
+  .axis .cap { display: inline; margin: 0 0 0 8px; font-size: 0.75rem; }
+  .axis .lbl { margin-top: 2px; font-size: 0.88rem; color: var(--sub); }
 
   /* 一生ストリップ: 横スクロール・端に余白 */
   .life-strip { grid-template-columns: repeat(5, 172px); gap: 14px; padding: 0 20px 6px; margin-top: 4px; scroll-padding-inline: 20px; }
@@ -387,8 +391,8 @@ br.pc { display: none; }                    /* PCだけ改行したい位置 */
 /* 375px: さらに詰めるところ */
 @media (max-width: 400px) {
   .hero h1 { font-size: 1.45rem; }
-  .axis { grid-template-columns: 7.6em 1fr; padding: 14px 16px; }
-  .axis .num { font-size: 1.3rem; }
+  .axis { grid-template-columns: 68px 1fr; }
+  .axis .num { font-size: 1.25rem; }
   .device { width: 216px; }
   .life-strip { grid-template-columns: repeat(5, 160px); }
   .life-line { width: calc(5 * 174px - 14px); }
