@@ -424,3 +424,5 @@ br.pc { display: none; }                    /* PCだけ改行したい位置 */
   .life-item .axes3 { gap: 3px; }
   .life-item .axes3 span { font-size: 0.68rem; padding: 0 6px; }
 }
+
+.contact .alt-contact { margin-top: 22px; line-height: 1.9; }

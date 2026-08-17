@@ -82,6 +82,7 @@ title: 利用規約
 
 本規約に関するご質問は、以下までご連絡ください。
 
+- お問い合わせフォーム: https://forms.gle/fRyBbyvadJb7Ru4U8
 - メール: <span data-mu="web-studio" data-md="ymail.ne.jp">web-studio［at］ymail.ne.jp</span>
 - アプリ内: アプリの設定 →「ご意見・ご要望をおくる」
 
