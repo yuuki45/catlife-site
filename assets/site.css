@@ -222,7 +222,7 @@ section.alt { background: var(--card); border-top: 1px solid var(--sep); border-
   display: block; background: var(--accent-deep);
   -webkit-mask: var(--img) center / contain no-repeat; mask: var(--img) center / contain no-repeat;
 }
-.tint.sleeping { --img: url(cat-sleeping.png); width: 220px; aspect-ratio: 284 / 217; margin: 0 auto; opacity: .85; }
+.tint.sleeping { --img: url(cat-sleeping.png?v=2); width: 220px; aspect-ratio: 291 / 224; margin: 0 auto; opacity: .85; }
 .tint.sitting  { --img: url(cat-sitting.png); }
 .tint.paw      { --img: url(paw-trail.png); width: 60px; aspect-ratio: 201 / 302; margin: 0 auto 14px; opacity: .55; }
 .screen .hero-photo .cat { background: #6f5a45; opacity: .9; width: 36%; right: 5%; bottom: 4%; aspect-ratio: 239 / 284; }
