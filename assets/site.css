@@ -426,3 +426,61 @@ br.pc { display: none; }                    /* PCだけ改行したい位置 */
 }
 
 .contact .alt-contact { margin-top: 22px; line-height: 1.9; }
+
+/* =========================================================
+   あしらい（素材シート由来）: 各セクション1つ・同じ位置・同じ色で反復
+   ========================================================= */
+.orn { display: block; margin: 0 auto 14px; width: 52px; background: var(--accent-deep); opacity: .5;
+  -webkit-mask: var(--img) center / contain no-repeat; mask: var(--img) center / contain no-repeat; }
+.orn-paw        { --img: url(orn-paw.png);            aspect-ratio: 274 / 234; }
+.orn-catface    { --img: url(orn-cat-face.png);       aspect-ratio: 288 / 242; }
+.orn-silhouette { --img: url(orn-cat-silhouette.png); aspect-ratio: 256 / 225; }
+.orn-whiskers   { --img: url(orn-whiskers-heart.png); aspect-ratio: 277 / 118; width: 64px; }
+.orn-tail       { --img: url(orn-tail.png);           aspect-ratio: 357 / 167; width: 72px; }
+.orn-yarn       { --img: url(orn-yarn.png);           aspect-ratio: 324 / 211; width: 60px; }
+.orn-fish       { --img: url(orn-fish.png);           aspect-ratio: 268 / 155; }
+.orn-heartears  { --img: url(orn-heart-ears.png);     aspect-ratio: 238 / 251; }
+.orn-sparkles   { --img: url(orn-sparkles.png);       aspect-ratio: 236 / 249; }
+.orn-pawtrail   { --img: url(paw-trail.png);          aspect-ratio: 201 / 302; width: 44px; }
+.orn-sitting    { --img: url(cat-sitting.png);        aspect-ratio: 239 / 284; }
+.orn-sleeping   { --img: url(cat-sleeping.png);       aspect-ratio: 291 / 224; }
+
+/* ヒーロー: 見出しの上に小さく（左寄せ）、端末の背後に大きく薄く */
+.hero-orn { margin: 0 0 14px; opacity: .6; }
+.hero .device { position: relative; }
+.hero-watermark { position: absolute; width: 260px; right: -110px; top: -40px; opacity: .10; z-index: -1; transform: rotate(-16deg); }
+.hero .wrap { position: relative; }
+.hero { position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; inset: 0;
+  background: radial-gradient(60% 50% at 78% 45%, rgba(194,161,119,.14) 0%, rgba(194,161,119,0) 70%); pointer-events: none; }
+
+/* Premium の透かし */
+.premium { position: relative; overflow: hidden; }
+.premium-mark { position: absolute; right: -6px; top: -14px; width: 130px; opacity: .08; margin: 0; }
+.premium > div, .premium > a { position: relative; }
+
+/* 写真のコーナー留め（アルバムの台紙に貼った感じ） */
+.ph { position: relative; display: block; }
+.ph::after { content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: 14px;
+  --c: rgba(194,161,119,.85);
+  background:
+    linear-gradient(135deg, var(--c) 0 11px, transparent 11.5px) 0 0 / 30px 30px no-repeat,
+    linear-gradient(225deg, var(--c) 0 11px, transparent 11.5px) 100% 0 / 30px 30px no-repeat,
+    linear-gradient(45deg,  var(--c) 0 11px, transparent 11.5px) 0 100% / 30px 30px no-repeat,
+    linear-gradient(315deg, var(--c) 0 11px, transparent 11.5px) 100% 100% / 30px 30px no-repeat;
+  opacity: .9; }
+.life-item .ph img { display: block; }
+
+/* フッターの座り猫 */
+.site-footer .copy { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.foot-cat { width: 22px; margin: 0; opacity: .55; }
+
+@media (max-width: 720px) {
+  .orn { width: 44px; margin-bottom: 10px; }
+  .orn-whiskers { width: 56px; }
+  .orn-tail { width: 62px; }
+  .hero-orn { margin: 0 0 10px; }
+  .hero-watermark { width: 190px; right: -70px; top: -30px; }
+  .premium-mark { width: 100px; }
+  .ph::after { background-size: 24px 24px; }
+}
